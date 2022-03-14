@@ -6,7 +6,33 @@ public class MyApp {
 		//System.out.println("ok2");
 		//test1();
 		//testCercle();
-		testPersonne();
+		//testPersonne();
+		testString();
+	}
+	
+	public static void testString() {
+		String ch="lundi-mardi";
+		int posTiret = ch.indexOf("-");//5
+		//appeler 2 fois .substring() pour récupérer et afficher les sous parties
+		//avant et après
+		if(posTiret>=0) {
+			String chDebut=ch.substring(0,posTiret);
+			System.out.println("chDebut="+chDebut);
+			String chFin=ch.substring(posTiret+1,ch.length());
+			System.out.println("chFin="+chFin);
+		}else {
+			System.out.println("pas de - trouvé dans ch");
+		}
+		
+		String ch2 = "BONJOUR"; //ch2="BONJOUR" ou "OK"
+		//via une boucle for, contruire une chaine de caractère à l'envers
+		//...
+		StringBuilder buffer= new StringBuilder(ch2.length());
+		for(int i=ch2.length()-1 ; i>=0 ; i=i-1) {
+			buffer.append(ch2.charAt(i));
+		}
+		String chInversee = buffer.toString();
+		System.out.println("chInversee="+chInversee);
 	}
 	
 	public static void testPersonne() {
@@ -37,6 +63,23 @@ public class MyApp {
 	}
 	
 	public static void test1() {
+		String chFileName = "ficA.txt";
+		int n = chFileName.length(); // 8 caractères
+		String chExt = chFileName.substring(n-3,n);
+		System.out.println("chExt="+chExt);
+		char c5 = chFileName.charAt(5);
+		System.out.println("c5="+c5);
+		
+		
+		String ch1 = null;
+		if( ch1 !=null &&  ch1.equals("ok") ) 
+			System.out.println("ch1 est déja ok");
+		else 
+			System.out.println("ch1 est pas encore ok");
+		ch1 = "ok";
+		if( ch1 !=null && ch1.equals("ok") ) 
+			System.out.println("ch1 est ok");
+		
 		//System.out.println("test1");
 		String s1 ="123.5";
 		double x1 ;
