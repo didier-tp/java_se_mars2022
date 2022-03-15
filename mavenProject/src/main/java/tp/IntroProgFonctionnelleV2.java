@@ -27,9 +27,9 @@ public class IntroProgFonctionnelleV2 {
 						                  p.getNom(),
 						                  p.getAge() + 2)
 		     );
-       //NB: l'objet (de données) p1 n'est pas modifié.
+       //NB: l'objet (de donnÃ©es) p1 n'est pas modifiÃ©.
        //l'application de la fonction de transformation 
-       //a permis de créer un nouvel objet p1Bis ayant 2 ans de plus que p1.
+       //a permis de crÃ©er un nouvel objet p1Bis ayant 2 ans de plus que p1.
        
        System.out.println("p1Bis="+p1Bis);//42 ans
 	}

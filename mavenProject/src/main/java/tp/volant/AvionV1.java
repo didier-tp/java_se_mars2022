@@ -7,11 +7,11 @@ public class AvionV1 extends ObjetVolant {
 	
 	public static final int TAILLE_MAX=50;
 	
-	//tableau de références sur des Personnes (passager , pilote, hotesse)
-	//montées dans l'avion
+	//tableau de rÃ©fÃ©rences sur des Personnes (passager , pilote, hotesse)
+	//montÃ©es dans l'avion
 	private Personne[] tabElements = new Personne[TAILLE_MAX];
 	
-	private int nbElements=0; //nombre d'élements montés dans l'avion
+	private int nbElements=0; //nombre d'Ã©lements montÃ©s dans l'avion
 	
 	
 	
@@ -46,16 +46,16 @@ public class AvionV1 extends ObjetVolant {
     	System.out.println("Avion comportant "+nbElements +" elements");
     	for(int i=0; i<nbElements; i++) {
     		//System.out.println("\t" + tabElements[i]);
-    		//polymorphisme (déclenché en boucle) sur .toString()
+    		//polymorphisme (dÃ©clenchÃ© en boucle) sur .toString()
     		System.out.println("\t" + tabElements[i].toString());
     		
     		//Appel de getSalaire (sans polymorphisme):
     		Personne p = tabElements[i];
     		if(p instanceof Employe) {
-    			//traitement à déclencher sur un objet dont le type Employé
+    			//traitement Ã  dÃ©clencher sur un objet dont le type EmployÃ©
     			Employe pAsEmp = (Employe) p;
     			int salaire = pAsEmp.getSalaire();
-    			System.out.println("salaire de l'employé = " + salaire);
+    			System.out.println("salaire de l'employÃ© = " + salaire);
     		}
     	}
 	}

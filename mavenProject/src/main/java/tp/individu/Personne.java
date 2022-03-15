@@ -7,7 +7,7 @@ public class Personne implements Transportable {
      private String nom ;
      private Integer age;
      
-     private double poids=65; //poids moyen par défaut ici (à affiner en appelant setpoids())
+     private double poids=65; //poids moyen par dÃ©faut ici (a affiner en appelant setpoids())
      
      private static int ageMajorite=18;
      
@@ -68,7 +68,7 @@ public class Personne implements Transportable {
 	public void setAge(Integer age) {
 		if(age>=0)
 		    this.age = age;
-		else System.out.println("age négatif invalide pas pris en compte");
+		else System.out.println("age nï¿½gatif invalide pas pris en compte");
 	}
 	
 	

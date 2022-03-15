@@ -5,8 +5,35 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <properties>
-    <maven.compiler.release>17</maven.compiler.release>
+    <java.version>17</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- config cohérente à ajuster si besoin dans eclipse
+         Window/Preferences/General/Workspace/TextFileEnconding/other=UTF-8 --> 
+    
+    <maven.compiler.release>${java.version}</maven.compiler.release>
    </properties>
+   
+  <dependencies> 
+      <!-- lombok sert à générer automatiquement les get/set et toString() 
+         pas de configuration supplémentaire absolument nécessaire dans intellij
+         pour que lombok fonctionne bien dans eclipse:
+           1) repérer le chemin menant à lombok.jar
+              $HOME\.m2\repository\org\projectlombok\lombok\1.18.22\lombok.jar
+           2) effectuer un double click sur lombok.jar 
+              (ou bien java -jar lombok.jar)
+           3) spécifier si besoin le chemin menant à eclipse
+           4) cliquer sur "Install" de façon à modifier eclipse.ini
+           5) arrêter et redémarrer eclipse
+           6) activer le menu Project/clean
+      -->
+         
+       <dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.18.22</version>
+		<scope>provided</scope>
+	</dependency>
+  </dependencies>
    
   <build>
      <plugins>
@@ -15,7 +42,7 @@
 		    <artifactId>maven-compiler-plugin</artifactId>
 		    <version>3.8.0</version>
 		    <configuration>
-		        <release>17</release>
+		        <release>${java.version}</release>
 		    </configuration>
 		</plugin>
      </plugins>

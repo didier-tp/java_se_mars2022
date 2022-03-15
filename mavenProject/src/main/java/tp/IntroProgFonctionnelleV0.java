@@ -16,9 +16,9 @@ public class IntroProgFonctionnelleV0 {
 	   System.out.println("p1="+p1);
 		
        Personne p1Bis = avecUnAnDePlusStatic(avecUnAnDePlusStatic(p1));	
-       //NB: l'objet (de données) p1 n'est pas modifié.
+       //NB: l'objet (de donnÃ©es) p1 n'est pas modifiÃ©.
        //la double application de la fonction de transformation avecUnAnDePlusStatic
-       //a permis de créer un nouvel objet p1Bis ayant 2 ans de plus que p1.
+       //a permis de crÃ©er un nouvel objet p1Bis ayant 2 ans de plus que p1.
        
        System.out.println("p1Bis="+p1Bis);//42 ans
 	}

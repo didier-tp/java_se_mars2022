@@ -12,7 +12,7 @@ public class MyApp {
 	public static void main(String[] args) {
 		//System.out.println("ok2");
 		//test1();
-		//testCercle();
+		testCercle();
 		//testPersonne();
 		//testString();
 		//testMoyenne();
@@ -26,8 +26,8 @@ public class MyApp {
 	}
 	
 	public static void testAvionV1() {
-		ObjetVolant obj =null; //obj est une variable référence
-		//qui pourra référence n'importe quel cas particuliers d'objet volant
+		ObjetVolant obj =null; //obj est une variable rÃ©fÃ©rence
+		//qui pourra rÃ©fÃ©rence n'importe quel cas particuliers d'objet volant
 		
 		//obj = new ObjetVolant(); impossible car ObjetVolant est une classe abtraite
 		
@@ -80,19 +80,19 @@ public class MyApp {
 	public static void testString() {
 		String ch="lundi-mardi";
 		int posTiret = ch.indexOf("-");//5
-		//appeler 2 fois .substring() pour récupérer et afficher les sous parties
-		//avant et après
+		//appeler 2 fois .substring() pour rÃ©cupÃ©rer et afficher les sous parties
+		//avant et aprÃ©s
 		if(posTiret>=0) {
 			String chDebut=ch.substring(0,posTiret);
 			System.out.println("chDebut="+chDebut);
 			String chFin=ch.substring(posTiret+1,ch.length());
 			System.out.println("chFin="+chFin);
 		}else {
-			System.out.println("pas de - trouvé dans ch");
+			System.out.println("pas de - trouvÃ© dans ch");
 		}
 		
 		String ch2 = "BONJOUR"; //ch2="BONJOUR" ou "OK"
-		//via une boucle for, contruire une chaine de caractère à l'envers
+		//via une boucle for, contruire une chaine de caractÃ©re a l'envers
 		//...
 		StringBuilder buffer= new StringBuilder(ch2.length());
 		for(int i=ch2.length()-1 ; i>=0 ; i=i-1) {
@@ -109,7 +109,7 @@ public class MyApp {
 		p2.incrementerAge();
 		System.out.println("age de p2 = " + p2.getAge());
 		System.out.println("p2 = " + p2);
-		p2.setAge(-5); //pas pris en compte (plus tard encadré par try/catch)
+		p2.setAge(-5); //pas pris en compte (plus tard encadrÃ© par try/catch)
 		System.out.println("p2 = " + p2);
 		p2.setAge(5); //pris en compte
 		System.out.println("p2 = " + p2);
@@ -123,15 +123,15 @@ public class MyApp {
 		System.out.println("rayon de c2 = " + c2.getRayon());
 		c2.setRayon(30);
 		//System.out.println("c2="+c2.toString());
-		System.out.println("c2="+c2);//.toString() est appelé automatiquement sur c2
-		                             //pour convertir l'objet c2 en "string" à concaténer
+		System.out.println("c2="+c2);//.toString() est appelÃ© automatiquement sur c2
+		                             //pour convertir l'objet c2 en "string" a concatÃ©ner
 	    double pC2 = c2.perimetre();
 	    System.out.println("perimetre de c2=" + pC2);
 	}
 	
 	public static void test1() {
 		String chFileName = "ficA.txt";
-		int n = chFileName.length(); // 8 caractères
+		int n = chFileName.length(); // 8 caractÃ¨res
 		String chExt = chFileName.substring(n-3,n);
 		System.out.println("chExt="+chExt);
 		char c5 = chFileName.charAt(5);
@@ -140,7 +140,7 @@ public class MyApp {
 		
 		String ch1 = null;
 		if( ch1 !=null &&  ch1.equals("ok") ) 
-			System.out.println("ch1 est déja ok");
+			System.out.println("ch1 est dÃ©ja ok");
 		else 
 			System.out.println("ch1 est pas encore ok");
 		ch1 = "ok";

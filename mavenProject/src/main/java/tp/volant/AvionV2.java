@@ -9,11 +9,11 @@ public class AvionV2 extends ObjetVolant {
 	
 	public static final int TAILLE_MAX=50;
 	
-	//tableau de références sur des choses transportables (passager , pilote, hotesse , bagages)
-	//montées dans l'avion
+	//tableau de rÃ©fÃ©rences sur des choses transportables (passager , pilote, hotesse , bagages)
+	//montÃ©es dans l'avion
 	private Transportable[] tabElements = new Transportable[TAILLE_MAX];
 	
-	private int nbElements=0; //nombre d'élements montés dans l'avion
+	private int nbElements=0; //nombre d'Ã©lements montÃ©s dans l'avion
 	
 	
 	
@@ -51,22 +51,22 @@ public class AvionV2 extends ObjetVolant {
     	double poidsTotal = 0;
     	for(int i=0; i<nbElements; i++) {
     		//System.out.println("\t" + tabElements[i]);
-    		//polymorphisme (déclenché en boucle) sur .toString()
+    		//polymorphisme (dï¿½clenchï¿½ en boucle) sur .toString()
     		//System.out.println("\t" + tabElements[i].toString());
     		
-    		//polymorphisme (déclenché en boucle) sur .getDesignation()
+    		//polymorphisme (dï¿½clenchï¿½ en boucle) sur .getDesignation()
     		System.out.println("\t" + tabElements[i].getDesignation());
     		
-    		//polymorphisme (déclenché en boucle) sur .getDesignation()
+    		//polymorphisme (dï¿½clenchï¿½ en boucle) sur .getDesignation()
     		poidsTotal += tabElements[i].getPoids();
     		
     		//Appel de getSalaire (sans polymorphisme):
     		Transportable p = tabElements[i];
     		if(p instanceof Employe) {
-    			//traitement à déclencher sur un objet dont le type Employé
+    			//traitement Ã  dÃ©clencher sur un objet dont le type EmployÃ©
     			Employe pAsEmp = (Employe) p;
     			int salaire = pAsEmp.getSalaire();
-    			//System.out.println("salaire de l'employé = " + salaire);
+    			//System.out.println("salaire de l'employÃ© = " + salaire);
     		}//fin de if
     	}//fin de for
     	System.out.println("charge utile(interne) de l'avion:" + poidsTotal);

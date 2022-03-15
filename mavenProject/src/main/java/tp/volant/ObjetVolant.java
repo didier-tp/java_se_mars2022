@@ -11,6 +11,6 @@ public abstract class ObjetVolant {
 		this.couleur = couleur;
 	}
 	
-	abstract public int getPlafond(); //cette operation devra être codée dans les sous-classes
+	abstract public int getPlafond(); //cette operation devra Ãªtre codÃ©e dans les sous-classes
     
 }
