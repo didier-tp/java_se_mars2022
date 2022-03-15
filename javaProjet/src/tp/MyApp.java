@@ -7,7 +7,26 @@ public class MyApp {
 		//test1();
 		//testCercle();
 		//testPersonne();
-		testString();
+		//testString();
+		testMoyenne();
+	}
+	
+	public static void testMoyenne() {
+		/*
+		double[] tabVal = new double[5];
+		tabVal[0]=4.0;
+		tabVal[1]=2.0;
+		tabVal[2]=1.0;
+		tabVal[3]=0.0;
+		tabVal[4]=5.0;
+		*/
+		double[] tabVal = { 4.0 , 2.0 , 1.0 , 0.0 , 5.0 };
+		double somme=0.0;
+		for(int i=0;i<tabVal.length;i++) {
+			somme = somme + tabVal[i];
+		}
+		double moyenne = somme / tabVal.length;
+		System.out.println("moyenne="+moyenne);
 	}
 	
 	public static void testString() {
