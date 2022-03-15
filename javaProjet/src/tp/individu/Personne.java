@@ -1,4 +1,6 @@
-package tp;
+package tp.individu;
+
+import tp.Transportable;
 
 public class Personne implements Transportable {
      private String prenom;
@@ -85,6 +87,8 @@ public class Personne implements Transportable {
 	public Integer getAge() {
 		return age;
 	}
+
+	
 
 	
 }

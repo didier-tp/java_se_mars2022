@@ -16,15 +16,14 @@ public class Bagage implements Transportable {
 		return this.poids;
 	}
 	
-	
-	public Bagage() {
-		super();
-	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Bagage [label=" + label + ", poids=" + poids + ", volume=" + volume + "]";
+	}
+
+	public Bagage() {
+		super();
 	}
 
 	public Bagage(String label, double poids, double volume) {

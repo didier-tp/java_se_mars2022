@@ -1,5 +1,7 @@
 package tp;
 
+import tp.individu.Personne;
+
 public class IntroProgFonctionnelleV0 {
 	
 	public static Personne avecUnAnDePlusStatic(Personne p) {

@@ -1,4 +1,4 @@
-package tp;
+package tp.volant;
 
 public abstract class ObjetVolant {
     private String couleur = "blanc";
@@ -11,6 +11,6 @@ public abstract class ObjetVolant {
 		this.couleur = couleur;
 	}
 	
-	abstract int getPlafond(); //cette operation devra être codée dans les sous-classes
+	abstract public int getPlafond(); //cette operation devra être codée dans les sous-classes
     
 }

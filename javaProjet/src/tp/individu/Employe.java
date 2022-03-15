@@ -1,4 +1,4 @@
-package tp;
+package tp.individu;
 
 public class Employe extends Personne{
     private int salaire;

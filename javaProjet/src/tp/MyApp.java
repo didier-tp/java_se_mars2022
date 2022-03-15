@@ -1,5 +1,12 @@
 package tp;
 
+import java.util.Date;
+
+import tp.individu.Employe;
+import tp.individu.Personne;
+import tp.volant.AvionV2;
+import tp.volant.ObjetVolant;
+
 public class MyApp {
 
 	public static void main(String[] args) {
@@ -12,6 +19,10 @@ public class MyApp {
 		testAvionV1();
 		double x= Math.sqrt(81);
 		System.out.println("racine de 81="+x);
+		
+		//java.util.Date d1 = new java.util.Date();
+		Date d1 = new Date();
+		System.out.println("d1="+d1);
 	}
 	
 	public static void testAvionV1() {

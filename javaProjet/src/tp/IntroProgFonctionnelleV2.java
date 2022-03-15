@@ -2,6 +2,8 @@ package tp;
 
 import java.util.function.Function;
 
+import tp.individu.Personne;
+
 public class IntroProgFonctionnelleV2 {
 	
 	/*

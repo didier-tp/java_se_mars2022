@@ -1,12 +1,15 @@
-package tp;
+package tp.volant;
 
-public class AvionV2 extends ObjetVolant {
+import tp.individu.Employe;
+import tp.individu.Personne;
+
+public class AvionV1 extends ObjetVolant {
 	
 	public static final int TAILLE_MAX=50;
 	
-	//tableau de références sur des choses transportables (passager , pilote, hotesse , bagages)
+	//tableau de références sur des Personnes (passager , pilote, hotesse)
 	//montées dans l'avion
-	private Transportable[] tabElements = new Transportable[TAILLE_MAX];
+	private Personne[] tabElements = new Personne[TAILLE_MAX];
 	
 	private int nbElements=0; //nombre d'élements montés dans l'avion
 	
@@ -17,7 +20,7 @@ public class AvionV2 extends ObjetVolant {
 	}
 
 
-	public AvionV2() {
+	public AvionV1() {
          //avion vide en sortie d'usine
 	}
 
@@ -28,12 +31,10 @@ public class AvionV2 extends ObjetVolant {
 		addElement(new Employe("jean","Pilote",40,4000));
 		addElement(new Employe("sophie","Hotesse",40,2000));
 		addElement(new Personne("passager","Clandestin",30));
-		addElement(new Bagage("sac xy",12,30));
-		addElement(new Bagage("valise zz",28,80));
 	}
 	
 	
-    public void addElement(Transportable p) {
+    public void addElement(Personne p) {
     	if(nbElements<TAILLE_MAX) {
 		    //tabElements[nbElements++]=p;
     		tabElements[nbElements]=p;
@@ -43,33 +44,25 @@ public class AvionV2 extends ObjetVolant {
     
     public void afficher() {
     	System.out.println("Avion comportant "+nbElements +" elements");
-    	double poidsTotal = 0;
     	for(int i=0; i<nbElements; i++) {
     		//System.out.println("\t" + tabElements[i]);
     		//polymorphisme (déclenché en boucle) sur .toString()
-    		//System.out.println("\t" + tabElements[i].toString());
-    		
-    		//polymorphisme (déclenché en boucle) sur .getDesignation()
-    		System.out.println("\t" + tabElements[i].getDesignation());
-    		
-    		//polymorphisme (déclenché en boucle) sur .getDesignation()
-    		poidsTotal += tabElements[i].getPoids();
+    		System.out.println("\t" + tabElements[i].toString());
     		
     		//Appel de getSalaire (sans polymorphisme):
-    		Transportable p = tabElements[i];
+    		Personne p = tabElements[i];
     		if(p instanceof Employe) {
     			//traitement à déclencher sur un objet dont le type Employé
     			Employe pAsEmp = (Employe) p;
     			int salaire = pAsEmp.getSalaire();
-    			//System.out.println("salaire de l'employé = " + salaire);
+    			System.out.println("salaire de l'employé = " + salaire);
     		}
     	}
-    	System.out.println("charge utile(interne) de l'avion:" + poidsTotal);
 	}
 
 
 	@Override
-	int getPlafond() {
+	public int getPlafond() {
 		return 12000;
 	}
 
