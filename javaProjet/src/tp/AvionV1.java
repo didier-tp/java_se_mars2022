@@ -23,7 +23,9 @@ public class AvionV1 {
 	
     public void addElement(Personne p) {
     	if(nbElements<50) {
-		    tabElements[nbElements++]=p;
+		    //tabElements[nbElements++]=p;
+    		tabElements[nbElements]=p;
+    		nbElements++;
     	}
 	}
     
@@ -31,6 +33,7 @@ public class AvionV1 {
     	System.out.println("Avion comportant "+nbElements +" elements");
     	for(int i=0; i<nbElements; i++) {
     		System.out.println("\t" + tabElements[i]);
+    		//System.out.println("\t" + tabElements[i].toString());
     	}
 	}
 
