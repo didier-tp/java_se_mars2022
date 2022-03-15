@@ -42,8 +42,18 @@ public class AvionV1 extends ObjetVolant {
     public void afficher() {
     	System.out.println("Avion comportant "+nbElements +" elements");
     	for(int i=0; i<nbElements; i++) {
-    		System.out.println("\t" + tabElements[i]);
-    		//System.out.println("\t" + tabElements[i].toString());
+    		//System.out.println("\t" + tabElements[i]);
+    		//polymorphisme (déclenché en boucle) sur .toString()
+    		System.out.println("\t" + tabElements[i].toString());
+    		
+    		//Appel de getSalaire (sans polymorphisme):
+    		Personne p = tabElements[i];
+    		if(p instanceof Employe) {
+    			//traitement à déclencher sur un objet dont le type Employé
+    			Employe pAsEmp = (Employe) p;
+    			int salaire = pAsEmp.getSalaire();
+    			System.out.println("salaire de l'employé = " + salaire);
+    		}
     	}
 	}
 
