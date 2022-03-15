@@ -8,7 +8,15 @@ public class MyApp {
 		//testCercle();
 		//testPersonne();
 		//testString();
-		testMoyenne();
+		//testMoyenne();
+		testAvionV1();
+	}
+	
+	public static void testAvionV1() {
+		AvionV1 avion = new AvionV1();
+		avion.initialiser();//avec  un pilote et une hotesse
+		avion.addElement(new Personne("jean","Bon",40));
+		avion.afficher();
 	}
 	
 	public static void testMoyenne() {
