@@ -10,12 +10,19 @@ public class MyApp {
 		//testString();
 		//testMoyenne();
 		testAvionV1();
+		double x= Math.sqrt(81);
+		System.out.println("racine de 81="+x);
 	}
 	
 	public static void testAvionV1() {
+		//Personne.setAgeMajorite(17);
+		Personne.setAgeMajorite(18);
 		AvionV1 avion = new AvionV1();
+		System.out.println("TAILLE_MAX="+AvionV1.TAILLE_MAX);
 		avion.initialiser();//avec  un pilote et une hotesse
-		avion.addElement(new Personne("jean","Bon",40));
+		avion.addElement(new Personne("jean","Bon",4));
+		avion.addElement(new Personne("jean","Aimaire",17));
+		avion.addElement(new Personne("axelle","Aire",18));
 		avion.afficher();
 	}
 	
