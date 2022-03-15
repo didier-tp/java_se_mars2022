@@ -1,0 +1,16 @@
+<!-- this is a configuration file for LogBack log Api (under SLF4J) 
+     LogBack is faster than log4J and used by default in Spring-boot -->
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="info"> <!-- "debug" , "info" , "warn" , "error" , ... -->
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

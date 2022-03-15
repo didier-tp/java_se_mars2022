@@ -1,0 +1,7 @@
+package tp.dessin.observateur;
+
+//NB: l'équivalent prédéfini est java.util.Observer
+
+public interface IObserver {
+	public void update(); // or notify() or ...
+}

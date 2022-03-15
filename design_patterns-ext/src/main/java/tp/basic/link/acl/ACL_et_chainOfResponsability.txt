@@ -1,0 +1,17 @@
+Le design pattern "chain of responsability" 
+a deux applications courantes assez connues:
+
+- ACL (Access Control List)
+- délégation d'aide contextuelle
+
+==================================
+
+principe des ACL (Access Control List):
+
+Un utilisateur (username, groupname) pourra ou pas
+(après authentification préalable via password ou autre)
+accéder à certaines ressources (ex: fichiers) selon
+le parcours d'une liste de contrôles d'accès associés à cette ressource
+chaque controle sera spécialisé (ex: utilisateurs autorisés , groupes autorisés , ...)
+
+Tous les contrôles d'un ACL doivent êtres valides . Si un seul échoue , l'accès à la resource sera refusé. 

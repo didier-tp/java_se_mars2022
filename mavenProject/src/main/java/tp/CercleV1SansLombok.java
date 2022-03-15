@@ -20,14 +20,16 @@ public class CercleV1SansLombok /* extends Object */ {
 		this.couleur = "black";
 		//this.setCouleur("black");
 	}
-	
-	
 
 	@Override
 	public String toString() {
-		return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + ", couleur=" + couleur + "]";
+		return "CercleV1SansLombok{" +
+				"xc=" + xc +
+				", yc=" + yc +
+				", rayon=" + rayon +
+				", couleur='" + couleur + '\'' +
+				'}';
 	}
-
 
 	public CercleV1SansLombok(int xc, int yc, int rayon, String couleur) {
 		this.xc = xc;
@@ -35,33 +37,36 @@ public class CercleV1SansLombok /* extends Object */ {
 		this.rayon = rayon;
 		this.couleur = couleur;
 	}
-   
+
 	public int getXc() {
 		return xc;
 	}
+
 	public void setXc(int xc) {
 		this.xc = xc;
 	}
+
 	public int getYc() {
 		return yc;
 	}
+
 	public void setYc(int yc) {
 		this.yc = yc;
 	}
+
 	public int getRayon() {
 		return rayon;
 	}
+
 	public void setRayon(int rayon) {
 		this.rayon = rayon;
 	}
+
 	public String getCouleur() {
 		return couleur;
 	}
+
 	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
-	
-	
-	
-
 }

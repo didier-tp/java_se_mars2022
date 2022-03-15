@@ -1,0 +1,1 @@
+java -classpath target/classes tp.dessin.app.FenetrePrincipale

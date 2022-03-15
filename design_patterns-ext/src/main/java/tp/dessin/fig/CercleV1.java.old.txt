@@ -1,0 +1,67 @@
+package tp.fig;
+
+import java.awt.Graphics;
+import java.text.MessageFormat;
+
+
+public class Cercle extends Figure{
+	
+	private int xc,yc,rayon; //+get/set
+	
+	public Cercle() {
+		super();
+	}
+
+
+	@Override
+	public void dessiner(Graphics g) {
+		int x1=xc-rayon;
+		int y1=yc-rayon;
+		int width=2*rayon;
+		int height=2*rayon;
+		g.setColor(this.getCouleur());
+		g.drawOval(x1, y1, width, height);		
+	}
+
+
+	public int getXc() {
+		return xc;
+	}
+
+
+	public void setXc(int xc) {
+		this.xc = xc;
+	}
+
+
+	public int getYc() {
+		return yc;
+	}
+
+
+	public void setYc(int yc) {
+		this.yc = yc;
+	}
+
+
+	public int getRayon() {
+		return rayon;
+	}
+
+
+	public void setRayon(int rayon) {
+		this.rayon = rayon;
+	}
+
+    
+	@Override
+	public String toSvgString() {
+	 String format="<circle cx=''{0}'' cy=''{1}'' r=''{2}'' style=''fill:red'' />";		
+	 return MessageFormat.format(format, xc,yc,rayon);
+	}
+
+
+	
+	
+	
+}
