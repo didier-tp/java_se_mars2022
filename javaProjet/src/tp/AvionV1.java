@@ -1,6 +1,6 @@
 package tp;
 
-public class AvionV1 {
+public class AvionV1 extends ObjetVolant {
 	
 	public static final int TAILLE_MAX=50;
 	
@@ -45,6 +45,12 @@ public class AvionV1 {
     		System.out.println("\t" + tabElements[i]);
     		//System.out.println("\t" + tabElements[i].toString());
     	}
+	}
+
+
+	@Override
+	int getPlafond() {
+		return 12000;
 	}
 
 }

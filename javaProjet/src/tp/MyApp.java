@@ -15,6 +15,11 @@ public class MyApp {
 	}
 	
 	public static void testAvionV1() {
+		ObjetVolant obj =null; //obj est une variable référence
+		//qui pourra référence n'importe quel cas particuliers d'objet volant
+		
+		//obj = new ObjetVolant(); impossible car ObjetVolant est une classe abtraite
+		
 		//Personne.setAgeMajorite(17);
 		Personne.setAgeMajorite(18);
 		AvionV1 avion = new AvionV1();
@@ -23,6 +28,9 @@ public class MyApp {
 		avion.addElement(new Personne("jean","Bon",4));
 		avion.addElement(new Personne("jean","Aimaire",17));
 		avion.addElement(new Personne("axelle","Aire",18));
+		
+		obj=avion;
+		System.out.println("plafond = " + obj.getPlafond());
 		
 		Employe hotesse2 = new Employe("sylvie","Hotesse",32,2000);
 		hotesse2.setSalaire(2200); //augmentation
@@ -33,7 +41,6 @@ public class MyApp {
 		p=hotesse2;//Employe en tant que cas particulier de Personne
 		System.out.println("p.toString()=" + p.toString() );
 		
-				
 		avion.afficher();
 	}
 	
