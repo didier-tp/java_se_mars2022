@@ -23,6 +23,17 @@ public class MyApp {
 		avion.addElement(new Personne("jean","Bon",4));
 		avion.addElement(new Personne("jean","Aimaire",17));
 		avion.addElement(new Personne("axelle","Aire",18));
+		
+		Employe hotesse2 = new Employe("sylvie","Hotesse",32,2000);
+		hotesse2.setSalaire(2200); //augmentation
+		avion.addElement(hotesse2);
+		System.out.println("hotesse2.toString()=" + hotesse2.toString() );
+		
+		Personne p=null;
+		p=hotesse2;//Employe en tant que cas particulier de Personne
+		System.out.println("p.toString()=" + p.toString() );
+		
+				
 		avion.afficher();
 	}
 	

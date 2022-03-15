@@ -23,8 +23,11 @@ public class AvionV1 {
 
 
 	public void initialiser() {
-		addElement(new Personne("jean","Pilote",40));
-		addElement(new Personne("sophie","Hotesse",40));
+	/*	addElement(new Personne("jean","Pilote",40));
+		addElement(new Personne("sophie","Hotesse",40));*/
+		addElement(new Employe("jean","Pilote",40,4000));
+		addElement(new Employe("sophie","Hotesse",40,2000));
+		addElement(new Personne("passager","Clandestin",30));
 	}
 	
 	
