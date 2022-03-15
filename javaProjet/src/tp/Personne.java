@@ -1,13 +1,32 @@
 package tp;
 
-public class Personne {
+public class Personne implements Transportable {
      private String prenom;
      private String nom ;
      private Integer age;
      
+     private double poids=65; //poids moyen par défaut ici (à affiner en appelant setpoids())
+     
      private static int ageMajorite=18;
      
-     public String mineurOuMajeur() {
+     
+     @Override
+ 	public String getDesignation() {
+ 		return this.toString();
+    	// return this.prenom + " " + this.nom;
+ 	}
+
+ 	@Override
+ 	public double getPoids() {
+ 		return this.poids;
+ 	}
+ 	
+ 
+     public void setPoids(double poids) {
+		this.poids = poids;
+	}
+
+	public String mineurOuMajeur() {
     	/* 
     	 if(age>=ageMajorite) return "majeur";
     	 else return "mineur";
@@ -43,11 +62,7 @@ public class Personne {
 		//this.age = this.age + 1;
 		this.age++;
 	}
-	
 
-
-	
-	
 	public void setAge(Integer age) {
 		if(age>=0)
 		    this.age = age;
@@ -70,8 +85,6 @@ public class Personne {
 	public Integer getAge() {
 		return age;
 	}
-	
-     
-     
+
 	
 }

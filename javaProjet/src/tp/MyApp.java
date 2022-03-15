@@ -22,8 +22,12 @@ public class MyApp {
 		
 		//Personne.setAgeMajorite(17);
 		Personne.setAgeMajorite(18);
-		AvionV1 avion = new AvionV1();
-		System.out.println("TAILLE_MAX="+AvionV1.TAILLE_MAX);
+		
+		//AvionV1 avion = new AvionV1();
+		//System.out.println("TAILLE_MAX="+AvionV1.TAILLE_MAX);
+		AvionV2 avion = new AvionV2();
+		System.out.println("TAILLE_MAX="+AvionV2.TAILLE_MAX);
+		
 		avion.initialiser();//avec  un pilote et une hotesse
 		avion.addElement(new Personne("jean","Bon",4));
 		avion.addElement(new Personne("jean","Aimaire",17));
