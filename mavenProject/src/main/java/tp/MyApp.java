@@ -2,6 +2,7 @@ package tp;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import tp.individu.Employe;
@@ -31,9 +32,20 @@ public class MyApp {
 	public static void testCollection() {
 		System.out.println(">>>> testCollection");
 		List<String> l1 = new ArrayList<String>();
-		l1.add("abc"); l1.add("xyz"); 
+		l1.add("lundi"); l1.add("mardi"); 
 		int nbElt = l1.size();
 		System.out.println("nbElt="+nbElt);
+		//boucle via iterateur
+		Iterator<String> it = l1.iterator();
+		while(it.hasNext()) {
+			String s1 = it.next();
+			System.out.println("s1="+s1);
+		}
+		//boucle via indice/position (ok sur List mais pas sur Set)
+		for(int i=0;i<l1.size();i++) {
+			String s2 = l1.get(i);
+			System.out.println("s2="+s2);
+		}
 		//boucle for au sens forEach
 		for(String s : l1) {
 			System.out.println("s="+s);
