@@ -12,12 +12,20 @@ public class RacineApp {
         String sVal=null;
 		try {
 			sVal = args[0];
+			double val = Double.parseDouble(sVal);
+	        double res = Math.sqrt(val);
+	        System.out.println("la racinne carre de " + sVal +  "  est " + res);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.err.println("il manque un argument. Usage: java tp.RacineApp 81 ");
 		}
-        double val = Double.parseDouble(sVal);
-        double res = Math.sqrt(val);
-        System.out.println("la racinne carre est " + res);
+		catch (NumberFormatException nfe) {
+			System.err.println("Erreur, l'argument  " + sVal + " doit être numérique");
+		}
+        
+	}
+	
+	public static double caculerRacineCarree(double x) {
+		return Math.sqrt(x);
 	}
 
 }
