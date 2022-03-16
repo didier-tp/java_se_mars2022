@@ -2,8 +2,10 @@ package tp;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import tp.individu.Employe;
 import tp.individu.Personne;
@@ -21,12 +23,27 @@ public class MyApp {
 		//testMoyenne();
 		testAvionV1();
 		testCollection();
+		testMap();
 		double x= Math.sqrt(81);
 		System.out.println("racine de 81="+x);
 		
 		//java.util.Date d1 = new java.util.Date();
 		Date d1 = new Date();
 		System.out.println("d1="+d1);
+	}
+	
+	public static void testMap() {
+		Map<Integer,String> mapNumMois = new HashMap<>();
+		mapNumMois.put(1, "janvier");
+		mapNumMois.put(2, "fevrier");
+		mapNumMois.put(3, "mars");
+		mapNumMois.put(12, "decembre");
+		mapNumMois.put(3, "MARS");
+		
+		String nomMoisNum3 = mapNumMois.get(3);
+		System.out.println("nomMoisNum3="+nomMoisNum3);
+		for(String valeur : mapNumMois.values() )
+			System.out.println(valeur);
 	}
 	
 	public static void testCollection() {
@@ -49,6 +66,11 @@ public class MyApp {
 		//boucle for au sens forEach
 		for(String s : l1) {
 			System.out.println("s="+s);
+		}
+		l1.remove("lundi");
+		//boucle for au sens forEach
+		for(String sa : l1) {
+			System.out.println("sa="+sa);
 		}
 	}
 	
