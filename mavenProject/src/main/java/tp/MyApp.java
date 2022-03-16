@@ -1,5 +1,7 @@
 package tp;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -32,6 +34,21 @@ public class MyApp {
 		// java.util.Date d1 = new java.util.Date();
 		Date d1 = new Date();
 		System.out.println("d1=" + d1);
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		// new SimpleDateFormat("yyyy-MM-dd");
+		String sdate = simpleDateFormat.format(new Date());
+		System.out.println("sdate="+sdate);
+		
+		String sDateNoel = "25/12/2021";
+		try {
+			Date dateDernierNoel = simpleDateFormat.parse(sDateNoel);
+			System.out.println("dateDernierNoel="+dateDernierNoel);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	public static void testMap() {
@@ -162,12 +179,12 @@ public class MyApp {
 		Collections.sort(listePers, new 
 				/* classe anonyme imbriquée implémentant */
 				java.util.Comparator<Personne>() {
-			@Override
-			public int compare(Personne p1, Personne p2) {
-				return (p1.getAge() - p2.getAge());
-			}
+					@Override
+					public int compare(Personne p1, Personne p2) {
+						return (p1.getAge() - p2.getAge());
+					}
 		});
-		System.out.println("apres tri :" + listePers);
+		System.out.println("apres tri (selon age ):" + listePers);
 		Collections.sort(listePers, new 
 				/* classe anonyme imbriquée implémentant */
 				java.util.Comparator<Personne>() {
@@ -176,7 +193,7 @@ public class MyApp {
 				return p1.getNom().compareToIgnoreCase(p2.getNom());
 			}
 		});
-		System.out.println("apres tri :" + listePers);
+		System.out.println("apres tri (selon nom):" + listePers);
 	};
 
 	public static void testPersonne() {

@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>tp</groupId>
+  <artifactId>tp_java_8_17</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+   <description>Tps sur les nouveautes de java 9 10 et 11 (et aussi 12,...,17)</description>
+  <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <!-- version du jdk : 1.6 , 1.7 , 1.8 
+         puis 9 , 10 , 11 , ..., 17, ... -->
+    <!--  <java.version>11</java.version> -->
+     <java.version>17</java.version> 
+     <maven.compiler.release>${java.version}</maven.compiler.release><!-- depuis java 9 --> 
+     <!--   
+     <maven.compiler.target>${java.version}</maven.compiler.target>
+     <maven.compiler.source>${java.version}</maven.compiler.source>
+     -->
+  </properties>
+  
+  <dependencies>
+		  <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.12.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version> <!--  version recente pour jdk recent -->
+		</dependency>
+  </dependencies>
+
+  
+  <build>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>${java.version}</release>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>  
+                </configuration>
+            </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+                        <manifest>
+                            <mainClass>tp.j15_16_17.MainClassForJPackageTestApp</mainClass>                                
+                        </manifest>
+					</archive>
+				</configuration>
+			</plugin>
+        </plugins>
+    </pluginManagement>
+</build>
+  
+</project>
