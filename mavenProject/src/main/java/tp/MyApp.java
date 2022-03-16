@@ -12,11 +12,11 @@ public class MyApp {
 	public static void main(String[] args) {
 		//System.out.println("ok2");
 		//test1();
-		testCercle();
-		//testPersonne();
+		//testCercle();
+		testPersonne();
 		//testString();
 		//testMoyenne();
-		testAvionV1();
+		//testAvionV1();
 		double x= Math.sqrt(81);
 		System.out.println("racine de 81="+x);
 		
@@ -109,7 +109,12 @@ public class MyApp {
 		p2.incrementerAge();
 		System.out.println("age de p2 = " + p2.getAge());
 		System.out.println("p2 = " + p2);
-		p2.setAge(-5); //pas pris en compte (plus tard encadré par try/catch)
+		try {
+			p2.setAge(-5); //pas pris en compte et remonte exception
+		} catch (Exception e) {
+			//System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
 		System.out.println("p2 = " + p2);
 		p2.setAge(5); //pris en compte
 		System.out.println("p2 = " + p2);

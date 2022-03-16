@@ -5,6 +5,11 @@ import tp.Transportable;
 import tp.individu.Employe;
 import tp.individu.Personne;
 
+/**
+* @author didier defrance
+*
+* AvionV2 comportant un tableau de références sur des choses Transportable
+*/
 public class AvionV2 extends ObjetVolant {
 	
 	public static final int TAILLE_MAX=50;

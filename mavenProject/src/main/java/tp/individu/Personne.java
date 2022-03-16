@@ -64,11 +64,15 @@ public class Personne implements Transportable {
 		//this.age = this.age + 1;
 		this.age++;
 	}
+	
+	public Integer getAge() {
+		return age;
+	}
 
 	public void setAge(Integer age) {
 		if(age>=0)
 		    this.age = age;
-		else System.out.println("age n�gatif invalide pas pris en compte");
+		else throw new RuntimeException("age négatif invalide pas pris en compte");
 	}
 	
 	
@@ -84,9 +88,7 @@ public class Personne implements Transportable {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Integer getAge() {
-		return age;
-	}
+	
 
 	
 
