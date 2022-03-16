@@ -1,10 +1,12 @@
 package tp;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import tp.individu.Employe;
 import tp.individu.Personne;
-import tp.volant.AvionV2;
+import tp.volant.AvionV3;
 import tp.volant.ObjetVolant;
 
 public class MyApp {
@@ -13,16 +15,29 @@ public class MyApp {
 		//System.out.println("ok2");
 		//test1();
 		//testCercle();
-		testPersonne();
+		//testPersonne();
 		//testString();
 		//testMoyenne();
-		//testAvionV1();
+		testAvionV1();
+		testCollection();
 		double x= Math.sqrt(81);
 		System.out.println("racine de 81="+x);
 		
 		//java.util.Date d1 = new java.util.Date();
 		Date d1 = new Date();
 		System.out.println("d1="+d1);
+	}
+	
+	public static void testCollection() {
+		System.out.println(">>>> testCollection");
+		List<String> l1 = new ArrayList<String>();
+		l1.add("abc"); l1.add("xyz"); 
+		int nbElt = l1.size();
+		System.out.println("nbElt="+nbElt);
+		//boucle for au sens forEach
+		for(String s : l1) {
+			System.out.println("s="+s);
+		}
 	}
 	
 	public static void testAvionV1() {
@@ -36,8 +51,10 @@ public class MyApp {
 		
 		//AvionV1 avion = new AvionV1();
 		//System.out.println("TAILLE_MAX="+AvionV1.TAILLE_MAX);
-		AvionV2 avion = new AvionV2();
-		System.out.println("TAILLE_MAX="+AvionV2.TAILLE_MAX);
+		//AvionV2 avion = new AvionV2();
+		//System.out.println("TAILLE_MAX="+AvionV2.TAILLE_MAX);
+		AvionV3 avion = new AvionV3();
+		System.out.println("TAILLE_MAX="+AvionV3.TAILLE_MAX);
 		
 		avion.initialiser();//avec  un pilote et une hotesse
 		avion.addElement(new Personne("jean","Bon",4));
