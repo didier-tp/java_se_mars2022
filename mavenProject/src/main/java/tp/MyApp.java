@@ -111,7 +111,11 @@ public class MyApp {
 		System.out.println("p2 = " + p2);
 		try {
 			p2.setAge(-5); //pas pris en compte et remonte exception
-		} catch (Exception e) {
+		} 
+		catch(IllegalArgumentException iae) {
+			System.err.println(iae.getMessage());
+		}
+		catch (Exception e) {
 			//System.err.println(e.getMessage());
 			e.printStackTrace();
 		}

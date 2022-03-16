@@ -69,10 +69,11 @@ public class Personne implements Transportable {
 		return age;
 	}
 
-	public void setAge(Integer age) {
+	public void setAge(Integer age) throws IllegalArgumentException {
 		if(age>=0)
 		    this.age = age;
-		else throw new RuntimeException("age négatif invalide pas pris en compte");
+		else throw new 	IllegalArgumentException("age négatif invalide pas pris en compte");
+		//IllegalArgumentException herite de RuntimeException
 	}
 	
 	
