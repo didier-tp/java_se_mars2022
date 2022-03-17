@@ -24,6 +24,15 @@ public class Product {
 		this.features = features;
 	}
 	
+	//pour pouvoir ecrire ailleurs  .filter( Product::auMoins100Euros)
+	public boolean auMoins100Euros(){
+		return this.getPrice() >= 100;
+	}
+	
+	//pour pouvoir ecrire ailleurs   .filter( Product::prodAuMoins100Euros)
+	public static boolean prodAuMoins100Euros(Product p){
+		return p.getPrice() >= 100;
+	}
 	
 	
 	@Override
