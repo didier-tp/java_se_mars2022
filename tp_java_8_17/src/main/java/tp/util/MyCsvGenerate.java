@@ -40,6 +40,24 @@ public class MyCsvGenerate {
 		Product prod1 = new Product(1L, "prod 1" , 123.0 , "Bon produit");
 		System.out.println(generateLineOfCsv(prod1,true));
 		System.out.println(generateLineOfCsv(prod1,false));
+		
+		decrireClasseJava("tp.data.Product");
+		decrireClasseJava("tp.data.Person");
+	}
+	
+	public static void decrireClasseJava(String  nomClasseJava) {
+		 System.out.println("description de " + nomClasseJava +":") ;
+		try {
+			Class c = Class.forName(nomClasseJava);
+			//ou bien Class c = intanceObjetJava.getClass();
+			for(Field f : c.getDeclaredFields()) {
+				f.setAccessible(true); //pour avoir le droit de récupérer la valeur d'une chose "private"
+			    System.out.println("\t attribut " + f.getName() + " de type= " + f.getType().getName());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
