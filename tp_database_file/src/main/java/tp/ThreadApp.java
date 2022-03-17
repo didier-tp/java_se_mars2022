@@ -13,7 +13,7 @@ public class ThreadApp {
 	}
 
 	public static void main(String[] args) {
-		// instructions executées par le thread principal (créé  d'office)
+		// instructions executÃ©es par le thread principal (crÃ©Ã©  d'office)
 		
 		CodeTraitement codeTraitement = new CodeTraitement();//avec .run()
 		CodeTraitement codeTraitement2 = new CodeTraitement(2);
@@ -21,14 +21,14 @@ public class ThreadApp {
         Thread nouveauThread2 = new Thread(codeTraitement);
         Thread nouveauThread3 = new Thread(codeTraitement);
         //au sein de cet exemple , les thread 2 et  3 executent exactement le meme
-        //code "codeTraitement" (code ré-entrant)
+        //code "codeTraitement" (code rÃ©-entrant)
         
         Thread nouveauThread4 = new Thread(codeTraitement2);
         
         Thread nouveauThread5 = new Thread(()-> { ThreadApp.traitementSimple();}) ;
         //ou bien Thread nouveauThread5 = new Thread(ThreadApp::traitementSimple );
         
-        nouveauThread2.start(); //début d'une execution de code en //
+        nouveauThread2.start(); //dï¿½but d'une execution de code en //
         nouveauThread3.start();
         nouveauThread4.start();
         nouveauThread5.start();
