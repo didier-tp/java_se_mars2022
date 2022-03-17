@@ -24,7 +24,8 @@ public class MyApp {
 		// testPersonne();
 		// testString();
 		// testMoyenne();
-		testClasseAnomymeImbriquee();
+		//testClasseAnomymeImbriquee();
+		testLambda();
 		//testAvionV1();
 		//testCollection();
 		//testMap();
@@ -35,11 +36,16 @@ public class MyApp {
 		Date d1 = new Date();
 		System.out.println("d1=" + d1);
 		
+		(new MyApp()).testDate();
+	
+	}
+	
+	public void testDate() {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		// new SimpleDateFormat("yyyy-MM-dd");
 		String sdate = simpleDateFormat.format(new Date());
 		System.out.println("sdate="+sdate);
-		
+		/*
 		String sDateNoel = "25/12/2021";
 		try {
 			Date dateDernierNoel = simpleDateFormat.parse(sDateNoel);
@@ -47,8 +53,7 @@ public class MyApp {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
-		
+		*/
 	}
 
 	public static void testMap() {
@@ -195,6 +200,26 @@ public class MyApp {
 		});
 		System.out.println("apres tri (selon nom):" + listePers);
 	};
+	
+	public static void testLambda() {
+		List<Personne> listePers = new ArrayList<>();
+		listePers.add(new Personne("jean", "Aaa", 40));
+		listePers.add(new Personne("jean", "Zorro", 20));
+		listePers.add(new Personne("jean", "Bon", 50));
+		listePers.add(new Personne("jean", "Dupond", 10));
+		System.out.println("avant tri :" + listePers);
+		Collections.sort(listePers, 
+				//(Personne p1, Personne p2) -> {	return (p1.getAge() - p2.getAge());	}
+				//(p1, p2) -> {	return (p1.getAge() - p2.getAge());	}
+				(p1, p2) ->  p1.getAge() - p2.getAge()
+		);
+		System.out.println("apres tri (selon age ):" + listePers);
+		Collections.sort(listePers, 
+				(p1, p2) -> p1.getNom().compareToIgnoreCase(p2.getNom())
+		);
+		System.out.println("apres tri (selon nom):" + listePers);
+	};
+
 
 	public static void testPersonne() {
 		Personne p1 = new Personne();
