@@ -52,7 +52,7 @@ public class MyCsvGenerate {
 			//ou bien Class c = intanceObjetJava.getClass();
 			for(Field f : c.getDeclaredFields()) {
 				f.setAccessible(true); //pour avoir le droit de récupérer la valeur d'une chose "private"
-			    System.out.println("\t attribut " + f.getName() + " de type= " + f.getType().getName());
+			    System.out.println("\t attribut " + f.getName() + " de type=" + f.getType().getName());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
