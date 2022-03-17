@@ -1,11 +1,9 @@
 package tp.annotations;
 
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
 
 /**
  * 
@@ -14,8 +12,9 @@ import java.lang.annotation.Target;
  * annotation dont la presence sera testée au dessus d'un champ/attribut
  * de façon à ignorer le stockage de l'attribut dans une ligne de fichier CSV à générer
  */
-@Retention(RUNTIME)
-@Target(FIELD)
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
 public @interface CsvIgnore {
-   
+
 }

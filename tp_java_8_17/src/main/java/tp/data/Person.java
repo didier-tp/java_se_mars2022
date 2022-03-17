@@ -2,6 +2,8 @@ package tp.data;
 
 import java.util.Optional;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import tp.annotations.CsvIgnore;
 import tp.annotations.MyMinimum;
 
@@ -11,11 +13,14 @@ public class Person {
 	private String lastName;
 	
 	@CsvIgnore
+	@JsonIgnore
 	private Address address; //may be null (optional)
 	
 	@CsvIgnore
 	private Person bestFriend; //may be null (optional)
 	
+	@CsvIgnore
+	@JsonIgnore
 	private String email; //may be null (optional)
 	//...
 	
