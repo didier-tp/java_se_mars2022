@@ -1,0 +1,4 @@
+Personne [prenom=jean, nom=Aaa, age=40] majeur
+Personne [prenom=jean, nom=Bon, age=50] majeur
+Personne [prenom=jean, nom=Dupond, age=10] mineur
+Personne [prenom=jean, nom=Zorro, age=20] majeur

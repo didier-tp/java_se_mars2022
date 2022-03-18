@@ -1,6 +1,8 @@
 package tp;
 
-import java.text.ParseException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -218,6 +220,18 @@ public class MyApp {
 				(p1, p2) -> p1.getNom().compareToIgnoreCase(p2.getNom())
 		);
 		System.out.println("apres tri (selon nom):" + listePers);
+		
+		FileOutputStream fos = null;
+		try {
+			fos = new FileOutputStream("personne.txt");
+			PrintStream ps = new PrintStream(fos);
+			listePers.stream().forEach( (p)->{ ps.println(p.toString()); } );
+			ps.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {fos.close();} catch (IOException e) {	e.printStackTrace();	}
+		}
 	};
 
 
