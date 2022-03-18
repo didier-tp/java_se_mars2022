@@ -69,7 +69,27 @@ public class DeviseDaoJdbc implements DeviseDao {
 
 	@Override
 	public List<Devise> rechercherToutesDevises() {
-		// a coder en TP
+		List<Devise> listeDevises = new ArrayList<>();
+		Connection cn = null;
+		try {
+			cn=MyJdbcUtil.etablishConnection(typeBase);
+			Statement st = cn.createStatement();
+			String reqSql = "SELECT * from devise";
+			ResultSet rs = st.executeQuery(reqSql);
+			while(rs.next()) {
+				Devise devise = new Devise(rs.getString("code"),
+						                   rs.getString("monnaie"),
+						                   rs.getDouble("d_change"));
+			    listeDevises.add(devise);
+			}
+			rs.close(); //fermetures dans l'ordre inverse des ouvertures
+			st.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			MyJdbcUtil.closeConnection(cn);
+		}
+		return listeDevises;
 	}
 
 	@Override
