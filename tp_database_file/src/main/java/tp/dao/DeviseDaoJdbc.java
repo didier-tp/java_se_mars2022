@@ -13,8 +13,8 @@ import util.MyJdbcUtil;
 public class DeviseDaoJdbc implements DeviseDao {
 	
 	//INSERT INTO devise (code,d_change,monnaie) VALUES ('EUR',1,'euro'); dans init_db.sql
-	//private String typeBase="mysql";
-	private String typeBase="h2";
+	private String typeBase="mysql";
+	//private String typeBase="h2";
 
 	@Override
 	public Devise creerDevise(Devise d) {

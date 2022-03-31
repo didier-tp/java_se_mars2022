@@ -12,7 +12,7 @@ public class TestDaoApp {
 		testCRUD_complet("MS",true);
 		//testCRUD_complet("MS2",false);
 		//testElementaire();
-		testProduitDao();
+		//testProduitDao();
 	}
 	
 	public static void testProduitDao() {
