@@ -7,6 +7,23 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 public class MyCsvUtil {
+	
+	public static String writeValuesAsCsvStringV1(Object obj){
+  	  String csvString=null;
+  	  Class<?> c = obj.getClass(); //meta description de la classe de l'objet obj
+		  try {
+			Field[] tabChamps = c.getDeclaredFields();
+				for(Field f : tabChamps) {
+					f.setAccessible(true); //pour acceder aux parties privées
+					String fieldValue= f.get(obj)==null?null:f.get(obj).toString();
+					csvString=(csvString==null)?fieldValue : csvString + ";" +fieldValue;
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+  	return csvString;
+    }  
+	
       public static String writeValuesAsCsvString(Object obj){
     	  String csvString=null;
     	  Class<?> c = obj.getClass(); //meta description de la classe de l'objet obj
@@ -18,11 +35,7 @@ public class MyCsvUtil {
 					if(annotCsvIgnore==null) {
 						f.setAccessible(true); //pour acceder aux parties privées
 						String fieldValue= f.get(obj)==null?null:f.get(obj).toString();
-						if(csvString==null) {
-							csvString = fieldValue;
-						}else {
-							csvString = csvString + ";" +fieldValue;
-						}
+						csvString=(csvString==null)?fieldValue : csvString + ";" +fieldValue;
 					}
 				}
 		} catch (Exception e) {
@@ -31,6 +44,21 @@ public class MyCsvUtil {
     	return csvString;
       }
       
+      
+      public static String writeFieldNamesAsCsvStringV1(Object obj){
+    	  String csvString=null;
+    	  Class<?> c = obj.getClass(); //meta description de la classe de l'objet obj
+		  try {
+			Field[] tabChamps = c.getDeclaredFields();
+				for(Field f : tabChamps) {
+					String fieldName= f.getName();
+					csvString=(csvString==null)?fieldName:csvString + ";" +fieldName;
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+    	return csvString;
+      }
       
       public static String writeFieldNamesAsCsvString(Object obj){
     	  String csvString=null;
@@ -41,12 +69,8 @@ public class MyCsvUtil {
 					CsvIgnore annotCsvIgnore = f.getAnnotation(CsvIgnore.class);
 					//si annotCsvIgnore==null , @CsvIgnore n'a pas été placé au dessus de f
 					if(annotCsvIgnore==null) {
-						String fieldValue= f.getName();
-						if(csvString==null) {
-							csvString = fieldValue;
-						}else {
-							csvString = csvString + ";" +fieldValue;
-						}
+						String fieldName= f.getName();
+						csvString=(csvString==null)?fieldName:csvString + ";" +fieldName;
 					}
 				}
 		} catch (Exception e) {
@@ -59,9 +83,7 @@ public class MyCsvUtil {
     	    if(col.isEmpty()) {
     	    	return;//fin fonction sans rien faire
     	    }
-    	    try {
-				FileOutputStream of = new FileOutputStream(fileName);
-				PrintStream ps = new PrintStream(of);
+    	    try (PrintStream ps = new PrintStream(new FileOutputStream(fileName))){
 				Object firstObj = col.get(0);
 				String ligneEnteteAuFormatCsv= writeFieldNamesAsCsvString(firstObj);
 				ps.println(ligneEnteteAuFormatCsv);
@@ -69,9 +91,8 @@ public class MyCsvUtil {
 					String ligneValeursAuFormatCsv= writeValuesAsCsvString(obj);
 					ps.println(ligneValeursAuFormatCsv);
 				}
-				ps.close(); of.close();// fermetures dans l'ordre inverse des ouvertures
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}//try_with_autoCloseable resource
       }
 }

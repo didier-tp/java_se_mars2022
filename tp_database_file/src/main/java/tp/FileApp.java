@@ -77,14 +77,20 @@ public class FileApp {
 		// via une boucle for , on calculera la somme des prix
 		double prixTotalHt=0.0;
 		double prixTotalTtc=0.0;
+		double prixHtCarreTotal=0.0;
+		double prixTtcCarreTotal=0.0;
 		for(Produit prod : listeProduits) {
 			prixTotalHt+=prod.getPrixHt(); //prixTotal=prixTotal+prod.getPrixHt(); 
-			prixTotalTtc+=prod.getPrixHt() * (1+ prod.getTauxTva()/100.0);
+			prixHtCarreTotal+=(prod.getPrixHt() * prod.getPrixHt());
+			double prixTtc= prod.getPrixHt() * (1+ prod.getTauxTva()/100.0);
+			prixTotalTtc+=prixTtc;
+			prixTtcCarreTotal+=prixTtc*prixTtc;
 		}
 		Stat statHt = new Stat();		statHt.setLabel("statHt");
 		statHt.setSomme(prixTotalHt);   statHt.setMoyenne(prixTotalHt/listeProduits.size());
-		statHt.setEcartType(null);      
-		Stat statTtc = new Stat("statTtc",prixTotalTtc,prixTotalTtc/listeProduits.size(),null);
+		statHt.setEcartType(Math.sqrt(prixHtCarreTotal/listeProduits.size() - Math.pow(statHt.getMoyenne(),2)));      
+		Stat statTtc = new Stat("statTtc",prixTotalTtc,prixTotalTtc/listeProduits.size(),
+				Math.sqrt(prixTtcCarreTotal/listeProduits.size() - Math.pow(prixTotalTtc/listeProduits.size(),2)));
 		List<Stat> listeStats = new ArrayList<>();
 		listeStats.add(statHt); 	listeStats.add(statTtc); 
 		MyCsvUtil.writeValuesAsCsvFile(listeStats,"stats.csv");

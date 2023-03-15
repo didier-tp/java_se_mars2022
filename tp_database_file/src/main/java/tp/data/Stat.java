@@ -9,7 +9,7 @@ public class Stat {
 	private Double somme;
 	private Double moyenne;
 	
-	@CsvIgnore
+	//@CsvIgnore
 	@JsonIgnore
 	private Double ecartType;
 
